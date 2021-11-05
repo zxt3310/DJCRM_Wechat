@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-gap": "/uview-ui/components/u-gap/u-gap"
+  }
+}

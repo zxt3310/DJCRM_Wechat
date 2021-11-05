@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+.header{
+	background-color:#5D91F7;
+	color: white;
+}
+page{
+	background-color: #e9e9e9;
+}
+.round-rect{
+	border-radius: 10rpx;
+}
+

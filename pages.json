@@ -1,0 +1,101 @@
+{
+	"easycom":{
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		
+	    {
+            "path" : "pages/main/main",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+			"path": "pages/index/index",
+			"style": {
+				// "navigationBarTitleText": "uni-app"
+			}
+		}
+        ,{
+            "path" : "pages/rankword/rankword",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/accounts/accounts",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/customs/customs",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user/user",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/channelDetail/channelDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "大鲸营销",
+		"navigationBarBackgroundColor": "#5D91F7",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"color":"#333",
+		"selectedColor":"#666",
+		"backgroundColor":"#fff",
+		"position":"bottom",
+		"list":[
+			{
+				"pagePath":"pages/main/main",
+				"text":"首页"
+			},
+			{
+				"pagePath":"pages/rankword/rankword",
+				"text":"调词"
+			},
+			{
+				"pagePath":"pages/accounts/accounts",
+				"text":"账户"
+			},
+			{
+				"pagePath":"pages/customs/customs",
+				"text":"客户"
+			},
+			{
+				"pagePath":"pages/user/user",
+				"text":"我的"
+			}
+		]
+	}
+}

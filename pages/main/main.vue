@@ -119,6 +119,14 @@
 				
 			}
 		},
+		onShow() {
+			const token = uni.getStorageSync("token");
+			if(token != null){
+				uni.navigateTo({
+					url:"../index/index"
+				})
+			}
+		},
 		methods: {
 			
 		}

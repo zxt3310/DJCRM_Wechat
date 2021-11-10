@@ -11202,8 +11202,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 // 如果需要了解这个install方法是什么，请移步：https://uviewui.com/components/vueUse.html
 var install = function install(Vue, vm) {
   // 此为自定义配置参数，具体参数见上方说明
+
   Vue.prototype.$u.http.setConfig({
-    baseUrl: 'https://cloud.37t.com',
+    baseUrl: 'https://cloud.37t.com/api',
     loadingText: '努力加载中~',
     loadingTime: 800
     // 设置自定义头部content-type
@@ -11215,31 +11216,31 @@ var install = function install(Vue, vm) {
 
 
   // 请求拦截部分，如配置，每次请求前都会执行
-  // Vue.prototype.$u.http.interceptor.request = (config) => {
-  // 	// 引用token
-  // 	// 方式一，存放在vuex的token，假设使用了uView封装的vuex方式
-  // 	// 见：https://uviewui.com/components/globalVariable.html
-  // 	// config.header.token = vm.token;
+  Vue.prototype.$u.http.interceptor.request = function (config) {
+    // 引用token
+    // 方式一，存放在vuex的token，假设使用了uView封装的vuex方式
+    // 见：https://uviewui.com/components/globalVariable.html
+    // config.header.token = vm.token;
 
-  // 	// 方式二，如果没有使用uView封装的vuex方法，那么需要使用$store.state获取
-  // 	// config.header.token = vm.$store.state.token;
+    // 方式二，如果没有使用uView封装的vuex方法，那么需要使用$store.state获取
+    // config.header.token = vm.$store.state.token;
 
-  // 	// 方式三，如果token放在了globalData，通过getApp().globalData获取
-  // 	// config.header.token = getApp().globalData.username;
+    // 方式三，如果token放在了globalData，通过getApp().globalData获取
+    // config.header.token = getApp().globalData.username;
 
-  // 	// 方式四，如果token放在了Storage本地存储中，拦截是每次请求都执行的
-  // 	// 所以哪怕您重新登录修改了Storage，下一次的请求将会是最新值
-  // 	// const token = uni.getStorageSync('token');
-  // 	// config.header.token = token;
-  // 	config.header.Token = 'xxxxxx';
+    // 方式四，如果token放在了Storage本地存储中，拦截是每次请求都执行的
+    // 所以哪怕您重新登录修改了Storage，下一次的请求将会是最新值
+    var token = uni.getStorageSync('token');
+    config.header.Authorization = token;
+    // config.header.Token = 'xxxxxx';
 
-  // 	// 可以对某个url进行特别处理，此url参数为this.$u.get(url)中的url值
-  // 	if(config.url == '/user/login') config.header.noToken = true;
-  // 	// 最后需要将config进行return
-  // 	return config;
-  // 	// 如果return一个false值，则会取消本次请求
-  // 	// if(config.url == '/user/rest') return false; // 取消某次请求
-  // }
+    // 可以对某个url进行特别处理，此url参数为this.$u.get(url)中的url值
+    if (config.url == '/oauth/token') config.header.noToken = true;
+    // 最后需要将config进行return
+    return config;
+    // 如果return一个false值，则会取消本次请求
+    // if(config.url == '/user/rest') return false; // 取消某次请求
+  };
 
   // 响应拦截，如配置，每次请求结束都会执行本方法
   Vue.prototype.$u.http.interceptor.response = function (res) {
@@ -11329,7 +11330,15 @@ var install = function install(Vue, vm) {
 /* 95 */,
 /* 96 */,
 /* 97 */,
-/* 98 */
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
 /*!********************************************************************************!*\
   !*** /Users/zxt3310/Documents/work/DJCRM_Wechat/uview-ui/libs/util/emitter.js ***!
   \********************************************************************************/
@@ -11388,7 +11397,7 @@ function _broadcast(componentName, eventName, params) {
     } } };exports.default = _default;
 
 /***/ }),
-/* 99 */
+/* 107 */
 /*!****************************************************************************************!*\
   !*** /Users/zxt3310/Documents/work/DJCRM_Wechat/uview-ui/libs/util/async-validator.js ***!
   \****************************************************************************************/
@@ -12751,10 +12760,10 @@ Schema.warning = warning;
 Schema.messages = messages;var _default =
 
 Schema;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 100)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 108)))
 
 /***/ }),
-/* 100 */
+/* 108 */
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -12785,7 +12794,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 101);
+        if (!path) path = __webpack_require__(/*! path */ 109);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -12798,7 +12807,7 @@ exports.features = {};
 
 
 /***/ }),
-/* 101 */
+/* 109 */
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -13108,7 +13117,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 100)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 108)))
 
 /***/ })
 ]]);

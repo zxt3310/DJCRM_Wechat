@@ -96,7 +96,7 @@ var components
 try {
   components = {
     uSubsection: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-subsection/u-subsection */ "uview-ui/components/u-subsection/u-subsection").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-subsection/u-subsection.vue */ 111))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-subsection/u-subsection */ "uview-ui/components/u-subsection/u-subsection").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-subsection/u-subsection.vue */ 119))
     }
   }
 } catch (e) {

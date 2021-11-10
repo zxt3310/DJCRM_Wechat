@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="header">
+		<view class="">
 			欢迎登陆 大鲸
 		</view>
 		<u-form :model="info" ref="uForm">
@@ -27,7 +27,11 @@
 			
 		},
 		methods: {
-
+			toTeacher(){
+				uni.navigateBack({
+					animationType:"slide-out-top"
+				})
+			}
 		}
 	}
 </script>
